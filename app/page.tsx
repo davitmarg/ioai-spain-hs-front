@@ -1,103 +1,140 @@
-import Image from "next/image";
+// HomePage.js
+"use client";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Section from "./components/Section/Section";
+import HomeSection from "./components/Section/HomeSection";
+import AboutUsSection from "./components/Section/AboutUsSection";
+import CourseSection from "./components/Section/CourseSection";
+import ExperienceSection from "./components/Section/ExperienceSection";
+import ExperienceMainSection from "./components/Section/ExperienceMainSection";
+import ScheduleSection from "./components/Section/ScheduleSection";
+import PricingSection from "./components/Section/PricingSection";
+import FAQSection from "./components/Section/FAQSection";
+import ContactSection from "./components/Section/ContactSection";
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+const sections = [
+    {
+        id: "home",
+        label: "Home",
+        color: "#3b82f6",
+        navTextColor: "#ffffff",
+    },
+    {
+        id: "about-us",
+        label: "About Us",
+        color: "#d1fae5",
+        navTextColor: "#374151",
+    },
+    {
+        id: "course",
+        label: "Course",
+        color: "#e0f2fe",
+        navTextColor: "#374151",
+    },
+    {
+        id: "the-experience",
+        label: "The Experience",
+        color: "#3b82f6",
+        navTextColor: "#ffffff",
+    },
+    {
+        id: "schedule",
+        label: "Schedule",
+        color: "#f1f5f9",
+        navTextColor: "#374151",
+    },
+    {
+        id: "pricing",
+        label: "Pricing",
+        color: "#cffafe",
+        navTextColor: "#374151",
+    },
+    {
+        id: "faq",
+        label: "FAQ",
+        color: "#ede9fe",
+        navTextColor: "#374151",
+    },
+    {
+        id: "contact-us",
+        label: "Contact Us",
+        color: "#3b82f6",
+        navTextColor: "#374151",
+    },
+];
+
+export default function HomePage() {
+    const [activeSection, setActiveSection] = useState(sections[0].id);
+    const activeSectionData =
+        sections.find((s) => s.id === activeSection) || sections[0];
+
+    return (
+        <main>
+            <Navbar
+                sections={sections}
+                activeColor={activeSectionData.color}
+                activeTextColor={activeSectionData.navTextColor}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+            <div>
+                <HomeSection
+                    key={sections[0].id}
+                    id={sections[0].id}
+                    backgroundColor={sections[0].color}
+                    onInView={() => setActiveSection(sections[0].id)}
+                />
+                <AboutUsSection
+                    key={sections[1].id}
+                    id={sections[1].id}
+                    backgroundColor={sections[1].color}
+                    onInView={() => setActiveSection(sections[1].id)}
+                />
+                <CourseSection
+                    key={sections[2].id}
+                    id={sections[2].id}
+                    backgroundColor={sections[2].color} // Ensure this matches the desired light blue-green
+                    onInView={() => setActiveSection(sections[2].id)}
+                />
+                <ExperienceSection
+                    key={sections[3].id} // Assuming this is the 4th section
+                    id={sections[3].id}
+                    backgroundColor={sections[3].color}
+                    onInView={() => setActiveSection(sections[3].id)}
+                />
+                <ExperienceMainSection
+                    key={sections[3].id + "_main"} // Unique key for this component
+                    id={sections[3].id}
+                    backgroundColor={sections[3].id}
+                    onInView={() => setActiveSection(sections[3].id)}
+                />
+
+                <ScheduleSection
+                    key={sections[4].id}
+                    id={sections[4].id}
+                    backgroundColor={sections[4].color}
+                    onInView={() => setActiveSection(sections[4].id)}
+                />
+
+                <PricingSection
+                    key={sections[5].id}
+                    id={sections[5].id}
+                    backgroundColor={sections[5].color}
+                    onInView={() => setActiveSection(sections[5].id)}
+                />
+                <FAQSection
+                    key={sections[6].id}
+                    id={sections[6].id}
+                    backgroundColor={sections[6].color}
+                    onInView={() => setActiveSection(sections[6].id)}
+                />
+                <ContactSection
+                    key={sections[7].id}
+                    id={sections[7].id}
+                    backgroundColor={sections[7].color}
+                    onInView={() => setActiveSection(sections[7].id)}
+                />
+            </div>
+        </main>
+    );
 }
