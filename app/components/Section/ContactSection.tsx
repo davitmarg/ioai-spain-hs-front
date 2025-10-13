@@ -21,7 +21,7 @@ const ContactSection = ({
                         {/* Column 1: Logo, Info & Socials */}
                         <div className="lg:col-span-1 space-y-6 text-left">
                             <h2 className="text-3xl font-bold font-balgin">
-                                IAOI Spain
+                                IOAI Spain
                             </h2>
                             <p className="text-gray-300 leading-relaxed">
                                 Our camp is designed to inspire and empower the
@@ -37,7 +37,7 @@ const ContactSection = ({
                                     href="#"
                                     className="text-white font-semibold underline hover:opacity-80"
                                 >
-                                    https://www.iaoispain.com
+                                    https://www.ioaispain.com
                                 </a>
                             </div>
                             <div className="flex space-x-4">
@@ -87,10 +87,10 @@ const ContactSection = ({
                                         Email
                                     </p>
                                     <a
-                                        href="mailto:contact@iaoispain.com"
+                                        href="mailto:contact@ioaispain.com"
                                         className="text-lg font-semibold underline hover:opacity-80"
                                     >
-                                        contact@iaoispain.com
+                                        contact@ioaispain.com
                                     </a>
                                 </div>
                                 <div className="py-6 sm:pl-6">
@@ -112,7 +112,7 @@ const ContactSection = ({
                 {/* Bottom Footer Bar */}
                 <div className="py-7 px-8">
                     <div className="max-w-6xl mx-auto flex justify-between items-center text-sm">
-                        <p className="text-gray-300">&copy; IAOI Spain 2025</p>
+                        <p className="text-gray-300">&copy; IOAI Spain 2025</p>
                         <a
                             href="#"
                             className="text-white font-semibold underline hover:opacity-80"
