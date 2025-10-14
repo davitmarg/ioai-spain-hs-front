@@ -14,48 +14,38 @@ interface ExperienceMainSectionProps {
 const instructors = [
     {
         id: "inst1",
-        name: "Marc T.",
-        src: "https://picsum.photos/seed/person1/200",
+        name: "Nikolay",
+        src: "https://framerusercontent.com/images/ARcB7fcjc5zuAAKiMaT49tEY4k.png",
     },
     {
         id: "inst2",
-        name: "Laura S.",
-        src: "https://picsum.photos/seed/person2/200",
+        name: "Brianda",
+        src: "https://framerusercontent.com/images/Gjz88nUpqs8tBJPqnyDKq4LR0.png",
     },
     {
         id: "inst3",
-        name: "David M.",
-        src: "https://picsum.photos/seed/person3/200",
+        name: "Maksym",
+        src: "https://framerusercontent.com/images/WDTL6OSLIZQeIb99eMMYmz90t0.png",
     },
     {
         id: "inst4",
-        name: "Ana P.",
-        src: "https://picsum.photos/seed/person4/200",
+        name: "Ilya",
+        src: "https://framerusercontent.com/images/aCmtU8ENEhGRS1MTXEJjyV90g.png",
     },
     {
         id: "inst5",
-        name: "John D.",
-        src: "https://picsum.photos/seed/person5/200",
+        name: "Elena",
+        src: "https://framerusercontent.com/images/7rYnNe9SBRd0W91DUbkzRwmsenc.png",
     },
     {
         id: "inst6",
-        name: "Maria G.",
-        src: "https://picsum.photos/seed/person10/200",
+        name: "Brayan",
+        src: "https://framerusercontent.com/images/a4nHzhVDfnJL9FWsGiyS4n8gb8.png",
     },
     {
         id: "inst7",
-        name: "Carlos R.",
-        src: "https://picsum.photos/seed/person7/200",
-    },
-    {
-        id: "inst8",
-        name: "Sophia K.",
-        src: "https://picsum.photos/seed/person8/200",
-    },
-    {
-        id: "inst9",
-        name: "Paul B.",
-        src: "https://picsum.photos/seed/person9/200",
+        name: "Humberto",
+        src: "https://framerusercontent.com/images/WxfbBSGTOvu7eA1w4FQE06gg.png",
     },
 ];
 
@@ -94,7 +84,7 @@ const ExperienceMainSection = ({
                             href="#" // Add the actual link here
                             className="inline-block mt-8 py-3 px-8 border-2 border-[#e6492d] text-[#e6492d] font-bold rounded-full hover:bg-[#e6492d] hover:text-white transition-colors duration-300"
                         >
-                            See Sa Vinyeta
+                            See the accommodation options
                         </a>
                     </div>
                 </div>
@@ -108,12 +98,11 @@ const ExperienceMainSection = ({
                             for knowledge
                         </h2>
                         <p className="mt-6 text-lg text-gray-700 leading-relaxed">
-                            At Maria Angels Cardona Institute, coding is made
-                            fun and interactive for kids. Our community of young
-                            coders learn through playing, and creativity is key.
-                            With experienced mentors and a supportive
-                            atmosphere, our students develop their coding skills
-                            and unleash their potential.
+                            Our community of young, eager-to-learn explorers
+                            thrives on playtime and creativity. With experienced
+                            mentors and a supportive atmosphere, our students
+                            develop their coding skills and unleash their full
+                            potential.
                         </p>
                     </div>
                     {/* Right Column: Image */}
@@ -139,11 +128,12 @@ const ExperienceMainSection = ({
                         learning in a playful manner.
                     </p>
                     {/* Instructor Image Grid with hover animations and alternating shapes */}
-                    <div className="mt-16 flex flex-wrap justify-center gap-8">
+                    <div className="mt-16 flex flex-wrap justify-center gap-8 hidden">
                         {instructors.map((instructor, index) => (
                             <motion.div
                                 key={instructor.id} // Use unique id for key
                                 className={`
+                                    bg-orange-300
                                     relative
                                     w-32 h-32 md:w-40 md:h-40
                                     overflow-hidden shadow-lg
@@ -172,7 +162,7 @@ const ExperienceMainSection = ({
                                         duration: 0.3,
                                         ease: "easeOut",
                                     }}
-                                    className="absolute inset-x-0 bottom-0 h-full bg-black bg-opacity-60 flex items-end justify-center p-2"
+                                    className="absolute inset-x-0 bottom-0 h-full bg-blue-600 bg-opacity-60 flex items-center justify-center p-2"
                                 >
                                     <span className="text-white text-lg font-bold">
                                         {instructor.name}

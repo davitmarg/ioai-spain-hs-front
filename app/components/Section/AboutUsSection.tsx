@@ -26,27 +26,38 @@ const AboutUsSection = ({
     return (
         <Section id={id} backgroundColor={backgroundColor} onInView={onInView}>
             {/* Main container div. Height increased to accommodate the gallery. */}
-            <div className="relative w-full min-h-[1600px] overflow-hidden py-15">
+            <div className="relative w-full min-h-[1900px] overflow-hidden py-15">
                 {/* Top Text Content - Position remains the same */}
                 <div className="absolute top-[100px] left-0 right-0 z-20">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto px-4">
                         <h2 className="text-3xl md:text-5xl text-gray-800 tracking-wide font-extrabold">
-                            July 1st — 15th Summer Day Camp
+                            July 5th — 19th 2026
                         </h2>
-                        <p className="mt-4 text-xl md:text-2xl text-gray-600">
-                            A 2-Week Program of Algorithmic Excellence for Young
-                            Innovators
+                        <p className="mt-4 text-2xl md:text-3xl text-bold text-gray-600">
+                            Two weeks of intellectual wizardry for young minds —
+                            the Summer International Olympic Sports Camp in
+                            Mathematics, Computer Science, and Artificial
+                            Intelligence.
                         </p>
                     </div>
                 </div>
 
                 {/* Bottom Text Content - Moved up to make space for the gallery */}
-                <div className="absolute bottom-[450px] left-0 right-0 z-20 pb-10">
+                <div className="absolute bottom-[400px] left-0 right-0 z-20 pb-10">
                     <div className="flex flex-col items-center text-center max-w-5xl mx-auto px-4">
-                        <p className="text-xl md:text-2xl text-gray-700 leading-relaxed md:leading-loose">
-                            Join our island coding camp for ages 10 to 18. Learn
-                            practical coding and problem solving. Build
-                            confidence and real projects.
+                        <p className="text-2xl md:text-3xl text-bold text-gray-700 leading-relaxed md:leading-loose">
+                            We’re thrilled to invite young innovators aged 10 to
+                            20 to an unforgettable two-week international camp
+                            in Spain — a celebration of Mathematics, Computer
+                            Science, and Artificial Intelligence. Set in a
+                            vibrant and inspiring coastal setting, camp combines
+                            fun, challenge, and discovery.
+                            <br />
+                            <br />
+                            Join us for a sparkling blue-coast journey where
+                            creativity meets competition — and where the next
+                            generation of digital and scientific leaders begins
+                            their path to success!
                         </p>
                     </div>
                 </div>

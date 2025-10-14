@@ -38,7 +38,7 @@ const HomeSection = ({ id, backgroundColor, onInView }: HomeSectionProps) => {
             {/* Overlay for text and to slightly dim video */}
             <div className="absolute inset-0 flex flex-col items-center justify-end pb-20">
                 <h1 className="text-6xl md:text-8xl font-extrabold text-white z-10">
-                    IOAI Camp
+                    Summer Camp
                 </h1>
             </div>
         </section>

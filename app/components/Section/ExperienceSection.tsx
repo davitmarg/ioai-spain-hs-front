@@ -33,31 +33,30 @@ const ExperienceSection = ({
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 w-full max-w-7xl mx-auto">
                         {/* Left Column: Heading */}
                         <div className="flex items-center">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl mt-15 font-extrabold text-white leading-tight text-left">
+                            <h1 className="text-3xl md:text-4xl lg:text-6xl mt-15 font-extrabold text-white leading-tight text-left">
                                 Just a code-a-way into the summer vibes of
-                                Menorca!
+                                Tenerife!
                             </h1>
                         </div>
-                        {/* Right Column: Paragraph */}
-                        <div className="flex items-center">
-                            <p className="text-base md:text-lg text-gray-200 leading-relaxed text-left py-7">
-                                Welcome to Menorca, the perfect destination for
+                        {/* Right Column: Paragraphs */}
+                        <div className="flex flex-col justify-center">
+                            <p className="text-base md:text-lg text-gray-200 leading-relaxed text-left py-5">
+                                Welcome to Tenerife, the perfect destination for
                                 a summer camp experience that your kids will
                                 never forget. Imagine your child arriving on the
                                 sun-drenched shores of this island, taking in
                                 the peaceful ambiance that sets it apart from
-                                other popular tourist destinations.
-                                <br />
-                                <br />
-                                From the charming twin cities of Maó and
-                                Ciutadella, to the stunning bays along the
+                                other popular tourist destinations. From the
+                                charming cities to the stunning bays along the
                                 coast, and the tranquil rural landscapes inland,
-                                Menorca is a treasure trove of natural beauty
-                                and cultural richness. With our summer camp
+                                Tenerife is a treasure trove of natural beauty
+                                and cultural richness. And with our summer camp
                                 program, your child will not only enjoy all that
                                 the island has to offer, but they will also have
                                 the opportunity to learn and grow in a fun and
-                                safe environment.
+                                safe environment. So don't wait any longer, book
+                                your child's spot today and give them a summer
+                                experience they will cherish for a lifetime.
                             </p>
                         </div>
                     </div>
