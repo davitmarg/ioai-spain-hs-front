@@ -11,7 +11,7 @@ type SectionInfo = {
 interface NavbarProps {
     sections: SectionInfo[];
     activeColor: string;
-    activeTextColor: string; // This will now be a hex code
+    activeTextColor: string;
 }
 
 const menuItemVariants = {
@@ -22,14 +22,9 @@ const menuItemVariants = {
 const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    // Effect to prevent body scroll when the mobile menu is open
+    // Disable body scroll when menu is open
     useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
-        // Cleanup function to reset the style when the component unmounts
+        document.body.style.overflow = isOpen ? "hidden" : "auto";
         return () => {
             document.body.style.overflow = "auto";
         };
@@ -42,9 +37,16 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                 animate={{ backgroundColor: activeColor }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-                {/* --- CHANGES START HERE --- */}
-                {/* 1. Add max-width and more padding for very large screens */}
-                <div className="container mx-auto flex max-w-screen-2xl items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
+                <div
+                    className="
+                        container mx-auto flex items-center justify-between
+                        px-4 sm:px-6 lg:px-8
+                        py-4 md:py-0
+                        md:h-[13vh]
+                        max-h-[200px]
+                        max-w-screen-2xl
+                    "
+                >
                     {/* Logo */}
                     <motion.div
                         animate={{ color: activeTextColor }}
@@ -52,18 +54,27 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                         className="bg-white/45 rounded-2xl py-2 px-3 flex items-center justify-center"
                     >
                         <a href="#home" className="inline-block">
-                            {/* 2. Increase logo size ONLY on 2xl screens */}
                             <img
                                 src="/ioai-spain.svg"
                                 alt="IOAI Spain"
-                                className="h-8 w-auto mx-auto 2xl:h-10"
+                                className="
+                                    h-8 w-auto mx-auto 
+                                    sm:h-9 
+                                    lg:h-10 
+                                    2xl:h-12
+                                "
                             />
                         </a>
                     </motion.div>
 
                     {/* Desktop Menu */}
-                    {/* 3. Increase space between items ONLY on 2xl screens */}
-                    <ul className="hidden md:flex items-center space-x-8 2xl:space-x-12">
+                    <ul
+                        className="
+                            hidden md:flex items-center justify-end 
+                            space-x-4 lg:space-x-7 2xl:space-x-10
+                            w-[90%]
+                        "
+                    >
                         {sections.map((section) => (
                             <li key={section.id}>
                                 <motion.div
@@ -73,10 +84,15 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                                         ease: "easeInOut",
                                     }}
                                 >
-                                    {/* 4. Increase font size ONLY on 2xl screens (1536px+) */}
                                     <a
                                         href={`#${section.id}`}
-                                        className="hover:text-pink-500 transition-colors text-lg 2xl:text-xl tracking-wide"
+                                        className="
+                                            hover:text-pink-500 transition-colors
+                                            text-base sm:text-lg 
+                                            lg:text-xl 
+                                            2xl:text-2xl 
+                                            tracking-wide
+                                        "
                                     >
                                         {section.label}
                                     </a>
@@ -84,7 +100,6 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                             </li>
                         ))}
                     </ul>
-                    {/* --- CHANGES END HERE --- */}
 
                     {/* Mobile Menu Button */}
                     <button
@@ -93,10 +108,9 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                     >
                         <motion.div animate={{ color: activeTextColor }}>
                             {isOpen ? (
-                                // Close Icon (X)
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-8 w-8"
+                                    className="h-8 w-8 sm:h-9 sm:w-9"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -109,10 +123,9 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                                     />
                                 </svg>
                             ) : (
-                                // Hamburger Icon
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-8 w-8"
+                                    className="h-8 w-8 sm:h-9 sm:w-9"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -137,10 +150,10 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                         initial="closed"
                         animate="open"
                         exit="closed"
-                        className="fixed inset-0 z-30 flex items-center justify-center bg-white"
+                        className="fixed inset-0 z-30 flex items-center justify-center"
                         style={{ backgroundColor: activeColor }}
                     >
-                        <ul className="flex flex-col items-center space-y-8 ">
+                        <ul className="flex flex-col items-center space-y-8">
                             {sections.map((section) => (
                                 <motion.li
                                     key={section.id}
@@ -148,9 +161,12 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                                 >
                                     <a
                                         href={`#${section.id}`}
-                                        className="text-4xl font-bold tracking-wide"
+                                        className="
+                                            font-bold tracking-wide
+                                            text-3xl sm:text-4xl md:text-5xl
+                                        "
                                         style={{ color: activeTextColor }}
-                                        onClick={() => setIsOpen(false)} // Close menu on click
+                                        onClick={() => setIsOpen(false)}
                                     >
                                         {section.label}
                                     </a>

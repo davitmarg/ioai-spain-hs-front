@@ -66,7 +66,7 @@ const ExperienceSection = ({
                 <div className="w-full">
                     <HorizontalImageGallery
                         images={experienceImages}
-                        duration={50}
+                        duration={15}
                         heightClassName="h-[250px] md:h-[350px]"
                         backgroundColorClassName="bg-transparent"
                     />

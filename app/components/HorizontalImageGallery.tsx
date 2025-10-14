@@ -11,12 +11,12 @@ interface HorizontalImageGalleryProps {
 
 const HorizontalImageGallery = ({
     images,
-    duration = 30,
+    duration = 10,
     heightClassName = "h-80",
     backgroundColorClassName = "bg-transparent",
 }: HorizontalImageGalleryProps) => {
     // Duplicate enough times to cover animation reset (3x or more is safe)
-    const repeatCount = 4;
+    const repeatCount = 10;
     const duplicatedImages = Array.from(
         { length: repeatCount },
         () => images
@@ -35,7 +35,7 @@ const HorizontalImageGallery = ({
                     x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration,
+                        duration: duration * repeatCount,
                         ease: "linear",
                     },
                 }}
