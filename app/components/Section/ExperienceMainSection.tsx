@@ -128,7 +128,7 @@ const ExperienceMainSection = ({
                         learning in a playful manner.
                     </p>
                     {/* Instructor Image Grid with hover animations and alternating shapes */}
-                    <div className="mt-16 flex flex-wrap justify-center gap-8 hidden">
+                    <div className="mt-16 flex-wrap justify-center gap-8 hidden">
                         {instructors.map((instructor, index) => (
                             <motion.div
                                 key={instructor.id} // Use unique id for key
