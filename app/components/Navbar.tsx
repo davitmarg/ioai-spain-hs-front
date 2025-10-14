@@ -42,7 +42,9 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                 animate={{ backgroundColor: activeColor }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-                <div className="container mx-auto flex items-center justify-between py-4 px-4 sm:px-6">
+                {/* --- CHANGES START HERE --- */}
+                {/* 1. Add max-width and more padding for very large screens */}
+                <div className="container mx-auto flex max-w-screen-2xl items-center justify-between py-4 px-4 sm:px-6 lg:px-8">
                     {/* Logo */}
                     <motion.div
                         animate={{ color: activeTextColor }}
@@ -50,16 +52,18 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                         className="bg-white/45 rounded-2xl py-2 px-3 flex items-center justify-center"
                     >
                         <a href="#home" className="inline-block">
+                            {/* 2. Increase logo size ONLY on 2xl screens */}
                             <img
                                 src="/ioai-spain.svg"
                                 alt="IOAI Spain"
-                                className="h-8 w-auto mx-auto"
+                                className="h-8 w-auto mx-auto 2xl:h-10"
                             />
                         </a>
                     </motion.div>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex items-center space-x-8 ">
+                    {/* 3. Increase space between items ONLY on 2xl screens */}
+                    <ul className="hidden md:flex items-center space-x-8 2xl:space-x-12">
                         {sections.map((section) => (
                             <li key={section.id}>
                                 <motion.div
@@ -69,9 +73,10 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                                         ease: "easeInOut",
                                     }}
                                 >
+                                    {/* 4. Increase font size ONLY on 2xl screens (1536px+) */}
                                     <a
                                         href={`#${section.id}`}
-                                        className="hover:text-pink-500 transition-colors text-lg tracking-wide"
+                                        className="hover:text-pink-500 transition-colors text-lg 2xl:text-xl tracking-wide"
                                     >
                                         {section.label}
                                     </a>
@@ -79,6 +84,7 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                             </li>
                         ))}
                     </ul>
+                    {/* --- CHANGES END HERE --- */}
 
                     {/* Mobile Menu Button */}
                     <button

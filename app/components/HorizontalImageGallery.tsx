@@ -15,8 +15,12 @@ const HorizontalImageGallery = ({
     heightClassName = "h-80",
     backgroundColorClassName = "bg-transparent",
 }: HorizontalImageGalleryProps) => {
-    // Duplicate images to create a seamless infinite scroll effect
-    const duplicatedImages = [...images, ...images];
+    // Duplicate enough times to cover animation reset (3x or more is safe)
+    const repeatCount = 4;
+    const duplicatedImages = Array.from(
+        { length: repeatCount },
+        () => images
+    ).flat();
 
     return (
         <div
@@ -25,18 +29,18 @@ const HorizontalImageGallery = ({
             <motion.div
                 className="flex absolute left-0 top-0 h-full items-center"
                 animate={{
-                    x: ["0%", "-50%"],
+                    x: ["0%", `-${(100 / repeatCount) * (repeatCount - 1)}%`],
                 }}
                 transition={{
                     x: {
                         repeat: Infinity,
                         repeatType: "loop",
-                        duration: duration,
+                        duration,
                         ease: "linear",
                     },
                 }}
                 style={{
-                    width: "200%", // two sets side by side
+                    width: `${repeatCount * 100}%`,
                 }}
             >
                 {duplicatedImages.map((src, index) => (
