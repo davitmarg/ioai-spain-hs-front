@@ -63,7 +63,7 @@ const sections = [
         id: "contact-us",
         label: "Contact Us",
         color: "#3b82f6",
-        navTextColor: "#374151",
+        navTextColor: "#ffffff",
     },
 ];
 
