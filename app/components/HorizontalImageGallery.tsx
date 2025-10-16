@@ -13,7 +13,6 @@ interface Item {
     id: number;
     imageIndex: number;
     left: number;
-    isRoundedFull: boolean;
 }
 
 const HorizontalImageGallery = ({
@@ -81,7 +80,6 @@ const HorizontalImageGallery = ({
                         id,
                         imageIndex: id % images.length,
                         left: lastItem.left + itemWidth,
-                        isRoundedFull: rounded,
                     });
                 }
 
@@ -108,7 +106,7 @@ const HorizontalImageGallery = ({
                 <div
                     key={item.id}
                     className={`h-3/4 aspect-square mx-4 overflow-hidden flex-shrink-0 ${
-                        item.isRoundedFull ? "rounded-full" : "rounded-[20%]"
+                        item.imageIndex % 2 ? "rounded-full" : "rounded-[20%]"
                     }`}
                     style={{
                         position: "absolute",
