@@ -122,7 +122,7 @@ const CourseSection = ({
                 </p>
 
                 {/* Course Card */}
-                <div className="relative bg-[#c2f0f7] p-8 md:p-12 rounded-3xl shadow-lg w-full max-w-2xl text-left mb-16 h-[420px] md:h-[450px]">
+                <div className="relative bg-[#c2f0f7] p-8 md:p-12 rounded-3xl shadow-lg w-full max-w-2xl text-left mb-16 min-h-[450px]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeLevelId + activeCourse.id}
