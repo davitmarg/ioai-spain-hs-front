@@ -40,10 +40,9 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                 <div
                     className="
                         container mx-auto flex items-center justify-between
-                        px-4 sm:px-6 lg:px-8
-                        py-4 md:py-0
-                        md:h-[13vh]
-                        max-h-[200px]
+                        px-3 lg:px-5
+                        py-4 md:py-3
+                        max-h-[120px]
                         max-w-screen-2xl
                     "
                 >
@@ -51,19 +50,39 @@ const Navbar = ({ sections, activeColor, activeTextColor }: NavbarProps) => {
                     <motion.div
                         animate={{ color: activeTextColor }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="bg-white/45 rounded-2xl py-2 px-3 flex items-center justify-center"
+                        className="
+                            rounded-2xl flex items-center justify-left w-1/2 md:w-1/4
+                        "
                     >
-                        <a href="#home" className="inline-block">
+                        <a
+                            href="#home"
+                            className="
+            flex flex-col items-center justify-center
+            md:flex-col sm:flex-row sm:items-center
+        "
+                        >
                             <img
-                                src="/ioai-spain.svg"
+                                src={
+                                    activeTextColor === "#ffffff"
+                                        ? "/leaguesofcode.png"
+                                        : "/leaguesofcode-colored.png"
+                                }
                                 alt="IOAI Spain"
                                 className="
-                                    h-8 w-auto mx-auto 
-                                    sm:h-9 
-                                    lg:h-10 
-                                    2xl:h-12
-                                "
+                h-7 sm:h-6 md:h-8 lg:h-9 2xl:h-10
+                w-auto
+            "
                             />
+                            <p
+                                className="
+                font-extrabold
+                text-center sm:text-left
+                text-sm sm:text-base md:text-lg lg:text-xl 2xl:text-2xl
+                mt-1 sm:mt-0 sm:ml-2
+            "
+                            >
+                                Leagues of Code
+                            </p>
                         </a>
                     </motion.div>
 

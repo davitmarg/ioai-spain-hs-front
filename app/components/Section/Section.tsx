@@ -35,7 +35,7 @@ const Section = ({
             ref={ref}
             id={id}
             style={{ backgroundColor }}
-            className="relative min-h-screen h-auto flex items-center justify-center"
+            className="relative min-h-[700px] h-auto flex items-center justify-center"
         >
             {children}
         </section>

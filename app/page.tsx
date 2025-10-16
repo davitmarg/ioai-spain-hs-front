@@ -128,12 +128,12 @@ export default function HomePage() {
                     backgroundColor={sections[4].color}
                     onInView={() => setActiveSection(sections[4].id)}
                 />
-                <PricingSection
+                {/* <PricingSection
                     key={sections[5].id}
                     id={sections[5].id}
                     backgroundColor={sections[5].color}
                     onInView={() => setActiveSection(sections[5].id)}
-                />
+                /> */}
                 <FAQSection
                     key={sections[6].id}
                     id={sections[6].id}
